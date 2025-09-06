@@ -8,15 +8,16 @@ rates = {
     "अहार": 54.25,
     "सर्वोत्तम": 68,
     "पनीर 1kg": 250,
-    "पनीर पैकेटवाला": 78,
+    "पनीर पैकेटवाला": 82,
     "दही 200 ग्राम": 17,
     "मटर 1kg": 90,
     "स्टार": 51,
     "गोल्ड": 56,
-    "राजन्स": 56,
+    "राजन्स": 54,
     "छोटा दूध": 45,
     "दही 400 ग्राम": 32,
     "दही 5kg": 250
+    
 }
 
 # सप्लायर टैब्स
@@ -31,6 +32,8 @@ with tabs[0]:
     paneer_packet = st.number_input("पनीर पैकेटवाला", min_value=0)
     dahi_200 = st.number_input("दही 200 ग्राम (पैकेट)", min_value=0)
     matar = st.number_input("मटर 1kg (किलोग्राम)", min_value=0)
+    rajans = st.number_input("राजन्स (लीटर)", min_value=0)
+    chota_doodh = st.number_input("छोटा दूध (लीटर)", min_value=0)
 
     total_jaffer = (
         ahar * rates["अहार"] +
@@ -38,7 +41,10 @@ with tabs[0]:
         paneer_1kg * rates["पनीर 1kg"] +
         paneer_packet * rates["पनीर पैकेटवाला"] +
         dahi_200 * rates["दही 200 ग्राम"] +
-        matar * rates["मटर 1kg"]
+        matar * rates["मटर 1kg"] +
+        rajans * rates["राजन्स"] +
+        chota_doodh * rates["छोटा दूध"]
+        
     )
 
     st.subheader(f"जाफर कुल: ₹ {total_jaffer:.2f}")
@@ -79,3 +85,4 @@ with tabs[2]:
 grand_total = total_jaffer + total_pandit + total_devgade
 st.markdown("---")
 st.header(f"संपूर्ण कुल राशि: ₹ {grand_total:.2f}")
+
