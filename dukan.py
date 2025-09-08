@@ -54,13 +54,13 @@ with tabs[1]:
     st.header("पंडितजी से वस्तुएँ")
     star = st.number_input("स्टार (लीटर)", min_value=0)
     gold = st.number_input("गोल्ड (लीटर)", min_value=0)
-    rajans = st.number_input("राजन्स (लीटर)", min_value=0)
+    rajans2 = st.number_input("राजन्स (लीटर)", min_value=0)
     chota_doodh = st.number_input("छोटा दूध (लीटर)", min_value=0)
 
     total_pandit = (
         star * rates["स्टार"] +
         gold * rates["गोल्ड"] +
-        rajans * rates["राजन्स"] +
+        rajans2 * rates["राजन्स"] +
         chota_doodh * rates["छोटा दूध"]
     )
 
@@ -72,14 +72,14 @@ with tabs[2]:
     dahi_400_dev = st.number_input("दही 400 ग्राम (पैकेट)", min_value=0, key="dev_400")
     matar_dev = st.number_input("मटर 1kg (किलोग्राम)", min_value=0, key="dev_matar")
     dahi_5kg = st.number_input("दही 5kg (किलोग्राम)", min_value=0)
-    rajans = st.number_input("राजन्स (लीटर)", min_value=0)
+    rajans3 = st.number_input("राजन्स (लीटर)", min_value=0)
     chota_doodh = st.number_input("छोटा दूध (लीटर)", min_value=0)
 
     total_devgade = (
         dahi_400_dev * rates["दही 400 ग्राम"] +
         matar_dev * rates["मटर 1kg"] +
         dahi_5kg * rates["दही 5kg"] +
-        rajans * rates["राजन्स"] +
+        rajans3 * rates["राजन्स"] +
         chota_doodh * rates["छोटा दूध"]
     )
 
@@ -89,5 +89,6 @@ with tabs[2]:
 grand_total = total_jaffer + total_pandit + total_devgade
 st.markdown("---")
 st.header(f"संपूर्ण कुल राशि: ₹ {grand_total:.2f}")
+
 
 
